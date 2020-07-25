@@ -1,13 +1,25 @@
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 import scrape_mars
+from pymongo import MongoClient
+
 
 app = Flask(__name__)
 
-# Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+
+app.config["MONGO_URI"] = "mongodb+srv://pharmon9847:ljcx7R9iOsO8oH0b@cluster1.xhk0t.mongodb.net/mars_app?retryWrites=true&w=majority"
+
 mongo = PyMongo(app)
 print(mongo)
+#client = MongoClient("mongodb+srv://pharmon9847:ljcx7R9iOsO8oH0b@cluster1.xhk0t.mongodb.net/test?retryWrites=true&w=majority")
+#db = client.mars_app
+
+#db.mars_app.drop()
+
+# Use flask_pymongo to set up mongo connection
+#app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+#mongo = PyMongo(app)
+#print(mongo)
 # Or set inline
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
